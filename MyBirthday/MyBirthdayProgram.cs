@@ -1,10 +1,10 @@
 ﻿using MyBirthday.Models;
 using System;
 using System.Drawing;
-using System.Media;
 using WMPLib;
-using Print = Colorful.Console;
-using Col = Colorful;
+using ColorConsole = Colorful;
+using System.IO;
+using MyBirthday.Properties;
 
 namespace MyBirthday
 {
@@ -13,14 +13,20 @@ namespace MyBirthday
 
         public static void Main()
         {
-            var persone = new MyPersone("SHILY", "Ilya", new DateTime(1995, 09, 13));
+            var persone = new MyPersone("SHILY", "Ilya", new DateTime(1995, 09, 23));
+
             var year = DateTime.Today.Month >= persone.Birthday.Month && DateTime.Today.Day > persone.Birthday.Day ? DateTime.Today.Year + 1 : DateTime.Today.Year;
             var result = (int)(new DateTime(year, persone.Birthday.Month, persone.Birthday.Day) - DateTime.Today).TotalDays;
+            var font = Resources.big;        
+
+            var musicFile = new FileInfo("music.mp3");
+            File.WriteAllBytes(musicFile.FullName, Resources.MyBirthday_by_Flatingo);
 
             if (result == 0)
             {
-                _ = persone.Name == "Ilya" ? new WindowsMediaPlayer { URL = @"C:\Users\ILYA\Desktop\SHILY PROJECT\MyBirthday by Flatingo.mp3" } : default;
-                Print.WriteLine(new Col.Figlet(Col.FigletFont.Load("big.flf")).ToAscii("Happy Birthday to me...:)"), ColorTranslator.FromHtml("#008B8B"));
+                Console.SetWindowSize(160, 10);
+                _ = musicFile.Exists && persone.Name == "Ilya" ? new WindowsMediaPlayer { URL = musicFile.FullName } : default;
+                ColorConsole.Console.WriteLine(new ColorConsole.Figlet(ColorConsole.FigletFont.Load(font)).ToAscii("Happy Birthday to me...:)"), ColorTranslator.FromHtml("#008B8B"));
             }
             else Console.WriteLine($"Days left: {result}");
             

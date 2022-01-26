@@ -1,10 +1,10 @@
-﻿using ExceptionTest.Models;
+﻿using ExceptionTestDemo.Models;
 using System;
 using System.Diagnostics;
 
-namespace ExceptionTest
+namespace ExceptionTestDemo
 {
-    internal class Program
+    internal class DemoProgram
     {
         public static void Main(string[] args)
         {

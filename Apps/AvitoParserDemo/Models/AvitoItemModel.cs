@@ -1,6 +1,4 @@
-﻿using HtmlAgilityPack;
-
-namespace AvitoParser.Models
+﻿namespace AvitoParserDemo.Models
 {
     public class AvitoItemModel
     {

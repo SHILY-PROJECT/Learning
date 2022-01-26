@@ -1,4 +1,4 @@
-﻿namespace PetStore.Enums
+﻿namespace PetStoreDemo.Enums
 {
     public enum PetInventoryStatus
     {

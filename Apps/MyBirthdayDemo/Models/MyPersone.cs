@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MyBirthday.Models
+namespace MyBirthdayDemo.Models
 {
     public class MyPersone
     {

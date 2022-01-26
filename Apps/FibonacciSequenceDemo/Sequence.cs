@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace FibonacciSequence
+namespace FibonacciSequenceDemo
 {
     public class Sequence
     {

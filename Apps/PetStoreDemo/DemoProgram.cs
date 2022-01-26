@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using Newtonsoft.Json;
-using PetStore.Enums;
-using PetStore.Models;
+using PetStoreDemo.Enums;
+using PetStoreDemo.Models;
 
-namespace LessonsConsile
+namespace PetStoreDemo
 {
-    public class PetStoreProgram
+    public class DemoProgram
     {
         private static readonly Dictionary<int, string> PetInventoryStatusForConsoleView = new Dictionary<int, string>
         {

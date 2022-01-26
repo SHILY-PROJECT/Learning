@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PetStore.Models
+namespace PetStoreDemo.Models
 {
     public class InventoryModel
     {

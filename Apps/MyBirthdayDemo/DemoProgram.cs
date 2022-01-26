@@ -1,19 +1,18 @@
-﻿using MyBirthday.Models;
+﻿using MyBirthdayDemo.Models;
 using System;
 using System.Drawing;
 using WMPLib;
 using ColorConsole = Colorful;
 using System.IO;
-using MyBirthday.Properties;
+using MyBirthdayDemo.Properties;
 
-namespace MyBirthday
+namespace MyBirthdayDemo
 {
-    public class MyBirthdayProgram
+    public class DemoProgram
     {
-
         public static void Main()
         {
-            var persone = new MyPersone("SHILY", "Ilya", new DateTime(1995, 09, 23));
+            var persone = new MyPersone("SHILY", "Ilya", new DateTime(1995, 09, 13));
 
             var year = DateTime.Today.Month >= persone.Birthday.Month && DateTime.Today.Day > persone.Birthday.Day ? DateTime.Today.Year + 1 : DateTime.Today.Year;
             var result = (int)(new DateTime(year, persone.Birthday.Month, persone.Birthday.Day) - DateTime.Today).TotalDays;

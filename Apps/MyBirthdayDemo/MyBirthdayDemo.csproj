@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <Reference Include="WMPLib">
-      <HintPath>..\files\WMPLib.dll</HintPath>
+      <HintPath>..\..\files\WMPLib.dll</HintPath>
     </Reference>
   </ItemGroup>
 

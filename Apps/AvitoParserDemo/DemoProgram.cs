@@ -2,11 +2,11 @@
 using System.Linq;
 using System.Collections.Generic;
 using HtmlAgilityPack;
-using AvitoParser.Models;
+using AvitoParserDemo.Models;
 
-namespace AvitoParser
+namespace AvitoParserDemo
 {
-    public class AvitoParserProgram
+    public class DemoProgram
     {
         public static void Main(string[] args)
         {

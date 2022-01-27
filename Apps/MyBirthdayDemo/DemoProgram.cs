@@ -1,9 +1,9 @@
-﻿using MyBirthdayDemo.Models;
-using System;
+﻿using System;
+using System.IO;
 using System.Drawing;
 using WMPLib;
 using ColorConsole = Colorful;
-using System.IO;
+using MyBirthdayDemo.Models;
 using MyBirthdayDemo.Properties;
 
 namespace MyBirthdayDemo

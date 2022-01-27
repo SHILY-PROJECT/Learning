@@ -103,7 +103,7 @@ namespace CustomStackDemo.CustomCollections
 
             private T GetCurrent()
             {
-                if (_current is null)
+                if (_current is null && _index == 0)
                     throw new InvalidOperationException("Enumeration has not started. Call MoveNext.");
                 return _current;
             }

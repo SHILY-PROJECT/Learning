@@ -64,7 +64,7 @@ namespace CustomStackDemo.CustomCollections
         public IEnumerator<T> GetEnumerator()
             => new StackEnumerator(this);
 
-        private class StackEnumerator : IEnumerator<T>, IDisposable
+        private class StackEnumerator : IEnumerator<T>
         {
             private readonly CustomStack<T> _stack;
             private CustomStackNode _node;
@@ -93,13 +93,13 @@ namespace CustomStackDemo.CustomCollections
                 return true;
             }
 
-            public void Reset()
+            public virtual void Reset()
             {
                 _node = _stack.Head;
                 _index = 0;
             }
 
-            public void Dispose() { }
+            public virtual void Dispose() { }
 
             private T GetCurrent()
             {

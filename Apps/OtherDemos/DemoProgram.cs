@@ -1,4 +1,5 @@
 ﻿DemoExtractSizeFromBytes();
+DemoListExtensions();
 
 Console.ReadKey();
 
@@ -13,4 +14,16 @@ static void DemoExtractSizeFromBytes()
         var res = VariableHandler.ExtractSizeFromBytes(value);
         Console.WriteLine(res);
     });
+    Console.WriteLine();
+}
+
+static void DemoListExtensions()
+{
+    var list = new List<string> { "one", "two", "three", "four", "five" };
+
+    Printer.PrintTitle("LIST EXTENSIONS ║ GetRandomLineWithRemoved");
+
+    Console.WriteLine("Output: " + list.GetLine(LineOption.GetRandomLineWithRemoved) + Environment.NewLine);
+    list.ForEach(line => Console.WriteLine(line));
+    Console.WriteLine();
 }

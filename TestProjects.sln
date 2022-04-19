@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SomeOfDemoTrash", "src\Some
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomCollectionsDemo", "src\CustomCollectionsDemo\CustomCollectionsDemo.csproj", "{3D3B8FA0-B99D-49B4-8EB2-A2185BDF85DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentifyUserDataByIp", "src\IdentifyUserDataByIp\IdentifyUserDataByIp.csproj", "{6BDF735D-6AC8-4E4B-91F5-BD51743158C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{3D3B8FA0-B99D-49B4-8EB2-A2185BDF85DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D3B8FA0-B99D-49B4-8EB2-A2185BDF85DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D3B8FA0-B99D-49B4-8EB2-A2185BDF85DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BDF735D-6AC8-4E4B-91F5-BD51743158C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BDF735D-6AC8-4E4B-91F5-BD51743158C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BDF735D-6AC8-4E4B-91F5-BD51743158C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BDF735D-6AC8-4E4B-91F5-BD51743158C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

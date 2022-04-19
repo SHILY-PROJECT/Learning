@@ -1,50 +1,50 @@
 ﻿using SomeOfDemoTrash.Trashcan;
-using IdentifyUserDataByIp.Core;
-using IdentifyUserDataByIp.Core.Models;
+using DefinerIpDataDemo.Core;
+using DefinerIpDataDemo.Core.Models;
 
-if (Detector.TryDefineIpData(out var userDataWithCurrentIp))
+if (Definer.TryDefineIpData(out var userDataWithCurrentIp))
 {
     Printer.PrintTitle("DEMO CURRENT IP DATA");
     Print(userDataWithCurrentIp);
     Console.WriteLine("\n");
 }
 
-if (Detector.TryDefineIpData("173.212.213.133", out var userDataWithGermanyIp))
+if (Definer.TryDefineIpData("173.212.213.133", out var userDataWithGermanyIp))
 {
     Printer.PrintTitle("DEMO GERMANY IP DATA");
     Print(userDataWithGermanyIp);
     Console.WriteLine("\n");
 }
 
-if (Detector.TryDefineIpData("142.93.44.47", out var userDataWithUnitedKingdomIp))
+if (Definer.TryDefineIpData("142.93.44.47", out var userDataWithUnitedKingdomIp))
 {
     Printer.PrintTitle("DEMO UNITED KINGDOM IP DATA");
     Print(userDataWithUnitedKingdomIp);
     Console.WriteLine("\n");
 }
 
-if (Detector.TryDefineIpData("93.177.198.114", out var userDataWithLatviaIp))
+if (Definer.TryDefineIpData("93.177.198.114", out var userDataWithLatviaIp))
 {
     Printer.PrintTitle("DEMO LATVIA IP DATA");
     Print(userDataWithLatviaIp);
     Console.WriteLine("\n");
 }
 
-if (Detector.TryDefineIpData("164.132.137.241", out var userDataWithFranceIp))
+if (Definer.TryDefineIpData("164.132.137.241", out var userDataWithFranceIp))
 {
     Printer.PrintTitle("DEMO FRANCE IP DATA");
     Print(userDataWithFranceIp);
     Console.WriteLine("\n");
 }
 
-if (Detector.TryDefineIpData("84.247.130.114", out var userDataWithNorwayIp))
+if (Definer.TryDefineIpData("84.247.130.114", out var userDataWithNorwayIp))
 {
     Printer.PrintTitle("DEMO NORWAY IP DATA");
     Print(userDataWithNorwayIp);
     Console.WriteLine("\n");
 }
 
-if (Detector.TryDefineIpData("31.161.38.233", out var userDataWithNetherlandsIp))
+if (Definer.TryDefineIpData("31.161.38.233", out var userDataWithNetherlandsIp))
 {
     Printer.PrintTitle("DEMO NETHERLANDS IP DATA");
     Print(userDataWithNetherlandsIp);

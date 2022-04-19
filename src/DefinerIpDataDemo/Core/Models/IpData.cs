@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace IdentifyUserDataByIp.Core.Models;
+namespace DefinerIpDataDemo.Core.Models;
 
 internal record IpData
 {

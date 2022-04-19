@@ -1,10 +1,10 @@
 ﻿using System.Net;
 using System.Text.Json;
-using IdentifyUserDataByIp.Core.Models;
+using DefinerIpDataDemo.Core.Models;
 
-namespace IdentifyUserDataByIp.Core;
+namespace DefinerIpDataDemo.Core;
 
-internal class Detector
+internal class Definer
 {
     public static bool TryDefineIpData(out IpData userData)
         => (userData = DefineIpDataAsync("").Result).IsSuccess;

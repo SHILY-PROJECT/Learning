@@ -2,54 +2,25 @@
 using DefinerIpDataDemo.Core;
 using DefinerIpDataDemo.Core.Models;
 
-if (Definer.TryDefineIpData(out var userDataWithCurrentIp))
+new List<(string country, string ip)>
 {
-    Printer.PrintTitle("DEMO CURRENT IP DATA");
-    Print(userDataWithCurrentIp);
-    Console.WriteLine("\n");
+    ("CURRENT", ""),
+    ("GERMANY", "173.212.213.133"),
+    ("UNITED KINGDOM", "142.93.44.47"),
+    ("LATVIA", "93.177.198.114"),
+    ("FRANCE", "164.132.137.241"),
+    ("NORWAY", "84.247.130.114"),
+    ("NETHERLANDS", "31.161.38.233")
 }
-
-if (Definer.TryDefineIpData("173.212.213.133", out var userDataWithGermanyIp))
+.ForEach(x =>
 {
-    Printer.PrintTitle("DEMO GERMANY IP DATA");
-    Print(userDataWithGermanyIp);
-    Console.WriteLine("\n");
-}
-
-if (Definer.TryDefineIpData("142.93.44.47", out var userDataWithUnitedKingdomIp))
-{
-    Printer.PrintTitle("DEMO UNITED KINGDOM IP DATA");
-    Print(userDataWithUnitedKingdomIp);
-    Console.WriteLine("\n");
-}
-
-if (Definer.TryDefineIpData("93.177.198.114", out var userDataWithLatviaIp))
-{
-    Printer.PrintTitle("DEMO LATVIA IP DATA");
-    Print(userDataWithLatviaIp);
-    Console.WriteLine("\n");
-}
-
-if (Definer.TryDefineIpData("164.132.137.241", out var userDataWithFranceIp))
-{
-    Printer.PrintTitle("DEMO FRANCE IP DATA");
-    Print(userDataWithFranceIp);
-    Console.WriteLine("\n");
-}
-
-if (Definer.TryDefineIpData("84.247.130.114", out var userDataWithNorwayIp))
-{
-    Printer.PrintTitle("DEMO NORWAY IP DATA");
-    Print(userDataWithNorwayIp);
-    Console.WriteLine("\n");
-}
-
-if (Definer.TryDefineIpData("31.161.38.233", out var userDataWithNetherlandsIp))
-{
-    Printer.PrintTitle("DEMO NETHERLANDS IP DATA");
-    Print(userDataWithNetherlandsIp);
-    Console.WriteLine("\n");
-}
+    if (Definer.TryDefineIpData(x.ip, out var ipData))
+    {
+        Printer.PrintTitle($"DEMO {x.country} IP DATA");
+        Print(ipData);
+        Console.WriteLine("\n");
+    }
+});
 
 Console.ReadLine();
 

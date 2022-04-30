@@ -26,7 +26,7 @@ internal class Demos
 
         Printer.PrintTitle("LIST EXTENSIONS ║ GetRandomLineWithRemoved");
 
-        Console.WriteLine("Output: " + list.GetLine(LineOption.GetRandomLineWithRemoved) + Environment.NewLine);
+        Console.WriteLine("Output: " + list.GetLine(ReturnStringSettings.RandomLineWithRemoved) + Environment.NewLine);
         list.ForEach(line => Console.WriteLine(line));
 
         Console.WriteLine();

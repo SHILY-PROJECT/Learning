@@ -1,50 +1,61 @@
 ﻿namespace SomeOfDemoTrash.Trashcan;
 
-public delegate T LineOption<T>(List<T> list);
+public delegate T ReturnStringSettings<T>(List<T> list);
 
 public static class ListExtensions
 {
-    public static T? GetLine<T>(this List<T> list, LineOption<T> lineOption, bool throwExceptionIfListIsEmptyOrNull = false)
+    private static readonly Random _rnd = new();
+
+    public static T? GetLine<T>(this List<T> list, Func<List<T>, T> returnStringSettings, bool throwExceptionIfListIsInvalid = false)
     {
         if (list is null || list.Count == 0)
         {
-            if (throwExceptionIfListIsEmptyOrNull)
-                throw new Exception("Список пуст");
+            if (throwExceptionIfListIsInvalid)
+                throw new Exception("List is empty or null.");
             return default;
         }
 
-        return lineOption.Invoke(list);
+        return returnStringSettings.Invoke(list);
+    }
+
+    public static void Shuffle<T>(this IList<T> list)
+    {
+        var n = list.Count;
+
+        while (n-- > 1 && _rnd.Next(n + 1) is int k)
+        {
+            (list[n], list[k]) = (list[k], list[n]);
+        }
     }
 }
 
-public static class LineOption
+public static class ReturnStringSettings
 {
     private static readonly Random _rnd = new();
 
-    public static T GetFirstLine<T>(this List<T> list) => list[0];
-
-    public static T GetFirstLineWithRemoved<T>(this List<T> list)
-    {
-        var line = list[0];
-        list.RemoveAt(0);
-        return line;
-    }
-
-    public static T GetRandomLine<T>(this List<T> list) => list[_rnd.Next(list.Count)];
-
-    public static T GetRandomLineWithRemoved<T>(this List<T> list)
-    {
-        var index = _rnd.Next(list.Count);
-        var line = list[index];
-        list.RemoveAt(index);
-        return line;
-    }
-
-    public static T GetFirstLineWithMoveToEnd<T>(this List<T> list)
+    public static T FirstLineWithMoveToEnd<T>(this List<T> list)
     {
         var line = list[0];
         list.RemoveAt(0);
         list.Add(line);
+        return line;
+    }
+
+    public static T FirstLineWithRemoved<T>(this List<T> list)
+    {
+        var line = list[0];
+        list.RemoveAt(0);
+        return line;
+    }
+
+    public static T RandomLine<T>(this List<T> list)
+        => list[_rnd.Next(list.Count)];
+
+    public static T RandomLineWithRemoved<T>(this List<T> list)
+    {
+        var index = _rnd.Next(list.Count);
+        var line = list[index];
+        list.RemoveAt(index);
         return line;
     }
 }

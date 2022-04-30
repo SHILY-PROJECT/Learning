@@ -52,4 +52,20 @@ internal class Demos
         }
         Console.ReadKey();
     }
+
+    public static void StartDemoCreateString()
+    {
+        Printer.PrintTitle("TEXT MACROS ║ CreateString");
+
+        new Func<string>[]
+        {
+            () => TextMacros.CreateString(10, "a"),
+            () => TextMacros.CreateString(15, "ab"),
+            () => TextMacros.CreateString(20, "abc"),
+            () => TextMacros.CreateString(25, "abcd")
+        }
+        .ToList().ForEach(f => Console.WriteLine(f.Invoke()));
+        
+        Console.ReadKey();
+    }
 }

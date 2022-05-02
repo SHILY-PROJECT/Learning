@@ -59,10 +59,10 @@ internal class Demos
 
         new Func<string>[]
         {
-            () => TextMacros.CreateString(10, "a"),
-            () => TextMacros.CreateString(15, "ab"),
-            () => TextMacros.CreateString(20, "abc"),
-            () => TextMacros.CreateString(25, "abcd")
+            () => TextMacros.RandomString(10, "a"),
+            () => TextMacros.RandomString(15, "ab"),
+            () => TextMacros.RandomString(20, "abc"),
+            () => TextMacros.RandomString(25, "abcd")
         }
         .ToList().ForEach(f => Console.WriteLine(f.Invoke()));
         

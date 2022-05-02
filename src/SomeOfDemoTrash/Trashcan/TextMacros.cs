@@ -5,9 +5,9 @@ public class TextMacros
     private static readonly Random _rnd = new();
 
     public static string CreateString(int lengthFrom, int lengthTo, string pattern, string customSymbols = "") =>
-        CreateString(_rnd.Next(lengthFrom < lengthTo ? lengthFrom : lengthTo, lengthTo + 1), pattern, customSymbols);
+        RandomString(_rnd.Next(lengthFrom < lengthTo ? lengthFrom : lengthTo, lengthTo + 1), pattern, customSymbols);
 
-    public static string CreateString(int length, string pattern, string customSymbols = "")
+    public static string RandomString(int length, string pattern, string customSymbols = "")
     {
         var dic = new Dictionary<char, string>
         {
@@ -40,4 +40,7 @@ public class TextMacros
 
         return string.Join("", chars);
     }
+
+    public static string CreateParamsLineForUrlOrBody(Dictionary<string, string> dicParams) =>
+        dicParams.Select((kv, index) => $"{(index != 0 ? "&" : "")}{kv.Key}={kv.Value}").Aggregate((a, b) => a + b).ToString();
 }
